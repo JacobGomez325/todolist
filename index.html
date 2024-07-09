@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="todo-container">
+      <div class="todo-header-container">
+        <h1>Todo List</h1>
+        <div class="todo-input-container">
+          <input
+            type="text"
+            id="todo-input"
+            placeholder="Ajouter une nouvelle tâche"
+          />
+          <button id="add-todo">Ajouter</button>
+          
+        </div>
+        <div class="todo-filter-container">
+          <select id="filter-todos">
+            <option value="tous">Tous</option>
+            <option value="fait">Fait</option>
+            <option value="en attente">En attente</option>
+            <option value="non fait">Non fait</option>
+          </select>
+        </div>
+      </div>
+      <ul id="todo-list"></ul>
+      <button id="download-csv">Télécharger en CSV</button>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,176 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  color: #201e1e;
+}
+
+.todo-container {
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 50vw;
+  padding: 20px;
+  margin: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #6C63FF;
+  text-transform: uppercase;
+}
+
+.todo-input-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+#todo-list {
+  max-height: 350px;
+  overflow: auto;
+}
+
+#todo-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  color: #201e1e;
+  outline: none;
+  height: 40px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+#add-todo {
+  padding: 10px 20px;
+  border: none;
+  background: #6C63FF;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+#add-todo:hover {
+  background: #052aff;
+}
+
+.todo-filter-container {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#filter-todos {
+  padding: 10px;
+  background-color: #eee;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  height: 40px;
+  width: 100%;
+  max-width: 200px;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+  overflow-x: hidden; /* Cache les débordements horizontaux */
+  overflow-y: auto;   /* Permet le défilement vertical si nécessaire */
+  position: relative; /* Pour un positionnement absolu des enfants */
+
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  background: #f8f9fa;
+  transition: background 0.3s;
+}
+
+
+.todo-item:hover {
+  background: #e9ecef;
+}
+
+
+.todo-status {
+  
+  background-color: transparent;
+  border: transparent;
+  padding: 10px 40px 10px 15px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  transition: border-color 0.3s ease;
+
+}
+
+.todo-text{
+  border: transparent;
+  background-color: transparent;
+  font-size: 12px;
+  cursor: pointer;
+  outline: none;
+}
+.todo-text:focus {
+  border: 1px solid #ccc;
+  padding: 10px 12px;
+  border-radius: 4px;
+}
+
+.empty-todo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-todo {
+  color: #dc3545;
+  cursor: pointer;
+}
+
+.delete-todo:hover {
+  color: #c82333;
+}
+
+#download-csv {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: #f6ff63;
+  font-size: 14px;
+  color: #201e1e;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#download-csv:hover {
+  background: #ffda05;
+}
+input:focus {
+  border-color: #052aff;
+  box-shadow: 0 0 5px #052aff;
+}
