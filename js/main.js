@@ -3,7 +3,6 @@ import { handleDragStart,handleDragOver,handleDrop,handleDragEnd } from "./drapA
 import { renderTodos } from "./rendering.js";
 
 
-
 // initialisation des elements de  base
 const todoInput = document.getElementById("todo-input");
 const addTodoBtn = document.getElementById("add-todo");
@@ -14,11 +13,14 @@ const downloadCsvBtn = document.getElementById("download-csv");
 //  mes todos list
 export const todos = loadTodos();
 
+function generateUniqueId() {
+  return 'todo-' + Date.now() + '-' + Math.floor(Math.random() * 1000);
+}
 
 function addTodo() {
   const text = todoInput.value.trim();
   if (text) {
-    todos.push({ text, status: "en attente" });
+    todos.push({id:generateUniqueId(), text, status: "en attente" });
     saveTodos(todos);
     renderTodos(todoList, todos, filterTodos.value);
     todoInput.value = "";
@@ -47,3 +49,4 @@ todoList.addEventListener('dragend', handleDragEnd);
 
 
 renderTodos(todoList, todos,filterTodos.value);
+

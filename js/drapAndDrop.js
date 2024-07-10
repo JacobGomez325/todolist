@@ -27,20 +27,24 @@ export function handleDragOver(e) {
  */
 export function handleDrop(e) {
   const target = e.target;
+
   // Vérifier si on dépose l'élément au tout début
   if (target === dragItem.parentNode.firstChild && dragStartClient > e.clientY) {
     target.parentNode.insertBefore(dragItem, target);
   }
+
   // Vérifier si on dépose l'élément à la toute fin
   else if (target === dragItem.parentNode.lastChild && dragStartClient < e.clientY) {
     target.parentNode.appendChild(dragItem);
   }
+
   // Comportement par défaut pour les autres cas
   else if (dragStartClient > e.clientY) {
     target.parentNode.insertBefore(dragItem, target);
   } else {
     target.parentNode.insertBefore(dragItem, target.nextSibling);
   }
+
   updateTodoDatasets()
   dragItem = undefined;
 }
@@ -55,7 +59,10 @@ export function handleDragEnd(e) {
 
 
 function updateTodoDatasets() {
-  const newOrder = [...todoList.querySelectorAll('.todo-item')].map(item => todos[item.dataset.index]);
-  saveTodos(newOrder); 
+  const newOrder = [...todoList.querySelectorAll('.todo-item')].map(item => {
+    return todos.find(todo => todo.id === item.dataset.id);
+  });
+  saveTodos(newOrder);
+  todos = newOrder;
+  renderTodos(todoList, todos, filterTodos.value);
 }
-
