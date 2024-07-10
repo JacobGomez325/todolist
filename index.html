@@ -13,30 +13,33 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div class="todo-container">
-      <div class="todo-header-container">
-        <h1>Todo List</h1>
-        <div class="todo-input-container">
-          <input
-            type="text"
-            id="todo-input"
-            placeholder="Ajouter une nouvelle tâche"
-          />
-          <button id="add-todo">Ajouter</button>
-          
+    <main class="container">
+      <div class="todo-container">
+        <div class="todo-header-container">
+          <h1>Todo List</h1>
+          <div class="todo-input-container">
+            <input
+              type="text"
+              id="todo-input"
+              placeholder="Ajouter une nouvelle tâche"
+            />
+            <button id="add-todo">Ajouter</button>
+            
+          </div>
+          <div class="todo-filter-container">
+            <select id="filter-todos">
+              <option value="tous">Tous</option>
+              <option value="fait">Fait</option>
+              <option value="en attente">En attente</option>
+              <option value="non fait">Non fait</option>
+            </select>
+          </div>
         </div>
-        <div class="todo-filter-container">
-          <select id="filter-todos">
-            <option value="tous">Tous</option>
-            <option value="fait">Fait</option>
-            <option value="en attente">En attente</option>
-            <option value="non fait">Non fait</option>
-          </select>
-        </div>
+        <ul id="todo-list"></ul>
+       
       </div>
-      <ul id="todo-list"></ul>
       <button id="download-csv">Télécharger en CSV</button>
-    </div>
+    </main>
 
     <script type="module" src="js/main.js"></script>
   </body>

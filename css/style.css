@@ -13,18 +13,21 @@ body {
   color: #201e1e;
 }
 
-.todo-container {
+.container {
   background: white;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 70vh;
   width: 100%;
   max-width: 50vw;
   padding: 20px;
   margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+
 
 h1 {
   text-align: center;
@@ -46,6 +49,7 @@ h1 {
   flex: 1;
   padding: 10px;
   border: 1px solid #ced4da;
+  width: 100%;
   color: #201e1e;
   outline: none;
   height: 40px;
@@ -88,9 +92,9 @@ ul {
   list-style: none;
   padding: 0;
   margin-bottom: 20px;
-  overflow-x: hidden; /* Cache les débordements horizontaux */
-  overflow-y: auto;   /* Permet le défilement vertical si nécessaire */
-  position: relative; /* Pour un positionnement absolu des enfants */
+  overflow-x: hidden; 
+  overflow-y: auto;   
+  position: relative; 
 
 }
 
@@ -173,4 +177,33 @@ ul {
 input:focus {
   border-color: #052aff;
   box-shadow: 0 0 5px #052aff;
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 80vw; 
+    height: 100vh;
+  }
+  .todo-status  {
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 90vw;
+    height: 100vh; 
+  }
+  .todo-input-container {
+    display: flex;
+    flex-direction: column;
+    margin: 20px ;
+    column-gap: 40px;
+  }
+  #add-todo {
+    margin: 5px 0;
+  }
+  .todo-status  {
+    padding: 0;
+  }
 }
